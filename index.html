@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Glengrove Appointments | Insurance & Financial Services</title>
+
+  <meta name="description"
+        content="Glengrove Appointments is a specialist search firm focused on insurance and financial services. Exceptional people. Important appointments.">
+
+  <style>
+    :root {
+      --forest: #173B32;
+      --forest-dark: #102B24;
+      --copper: #B56F45;
+      --ivory: #F5F1E8;
+      --cream: #EDE7DA;
+      --charcoal: #252724;
+      --white: #FFFFFF;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--charcoal);
+      background: var(--ivory);
+      line-height: 1.6;
+    }
+
+    h1, h2, h3 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 400;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* ---------------- NAVIGATION ---------------- */
+
+    nav {
+      height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 6%;
+      background: var(--ivory);
+      border-bottom: 1px solid rgba(23,59,50,0.12);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo {
+      color: var(--forest);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 25px;
+      letter-spacing: 2px;
+    }
+
+    .logo span {
+      display: block;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 8px;
+      letter-spacing: 4px;
+      text-align: center;
+      color: var(--copper);
+      margin-top: -3px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+      align-items: center;
+      font-size: 13px;
+      letter-spacing: .4px;
+    }
+
+    .nav-links a:hover {
+      color: var(--copper);
+    }
+
+    .nav-button {
+      background: var(--forest);
+      color: white;
+      padding: 12px 20px;
+      font-size: 12px;
+      letter-spacing: .5px;
+    }
+
+    .nav-button:hover {
+      background: var(--copper);
+    }
+
+    /* ---------------- HERO ---------------- */
+
+    .hero {
+      min-height: 720px;
+      background:
+        linear-gradient(rgba(16,43,36,.86), rgba(16,43,36,.93)),
+        url("https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=2000&q=85");
+      background-size: cover;
+      background-position: center;
+      color: white;
+      display: flex;
+      align-items: center;
+      padding: 100px 9%;
+    }
+
+    .hero-content {
+      max-width: 850px;
+    }
+
+    .eyebrow {
+      color: var(--copper);
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      font-size: 12px;
+      margin-bottom: 25px;
+    }
+
+    .hero h1 {
+      font-size: clamp(58px, 8vw, 105px);
+      line-height: .95;
+      margin-bottom: 30px;
+    }
+
+    .hero h1 span {
+      color: var(--copper);
+    }
+
+    .hero-subtitle {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 25px;
+      max-width: 650px;
+      line-height: 1.4;
+      margin-bottom: 45px;
+    }
+
+    .hero-text {
+      max-width: 610px;
+      color: rgba(255,255,255,.78);
+      margin-bottom: 40px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 15px 27px;
+      border: 1px solid var(--copper);
+      margin-right: 10px;
+      font-size: 12px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .button-primary {
+      background: var(--copper);
+      color: white;
+    }
+
+    .button-secondary {
+      color: white;
+    }
+
+    .button:hover {
+      background: white;
+      color: var(--forest);
+      border-color: white;
+    }
+
+    /* ---------------- INTRO ---------------- */
+
+    .intro {
+      padding: 130px 10%;
+      text-align: center;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .intro h2 {
+      font-size: clamp(40px, 5vw, 65px);
+      color: var(--forest);
+      line-height: 1.1;
+      margin-bottom: 30px;
+    }
+
+    .intro p {
+      max-width: 700px;
+      margin: auto;
+      color: #5c5d58;
+      font-size: 17px;
+    }
+
+    .copper-line {
+      width: 55px;
+      height: 2px;
+      background: var(--copper);
+      margin: 30px auto;
+    }
+
+    /* ---------------- EXPERTISE ---------------- */
+
+    .expertise {
+      background: white;
+      padding: 110px 8%;
+    }
+
+    .section-heading {
+      max-width: 700px;
+      margin-bottom: 60px;
+    }
+
+    .section-heading h2 {
+      font-size: 50px;
+      color: var(--forest);
+      margin-bottom: 20px;
+    }
+
+    .section-heading p {
+      color: #666;
+    }
+
+    .expertise-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: #d8d5cd;
+    }
+
+    .expertise-card {
+      background: white;
+      padding: 45px 35px;
+      min-height: 230px;
+      transition: .25s;
+    }
+
+    .expertise-card:hover {
+      background: var(--forest);
+      color: white;
+    }
+
+    .expertise-number {
+      color: var(--copper);
+      font-size: 12px;
+      letter-spacing: 2px;
+      margin-bottom: 25px;
+    }
+
+    .expertise-card h3 {
+      font-size: 28px;
+      margin-bottom: 12px;
+    }
+
+    .expertise-card p {
+      font-size: 14px;
+      color: #777;
+    }
+
+    .expertise-card:hover p {
+      color: rgba(255,255,255,.7);
+    }
+
+    /* ---------------- APPROACH ---------------- */
+
+    .approach {
+      padding: 120px 8%;
+      background: var(--ivory);
+    }
+
+    .approach-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 25px;
+    }
+
+    .step {
+      border-top: 1px solid var(--copper);
+      padding-top: 25px;
+    }
+
+    .step-number {
+      color: var(--copper);
+      font-size: 12px;
+      letter-spacing: 2px;
+      margin-bottom: 20px;
+    }
+
+    .step h3 {
+      color: var(--forest);
+      font-size: 24px;
+      margin-bottom: 15px;
+    }
+
+    .step p {
+      color: #666;
+      font-size: 14px;
+    }
+
+    /* ---------------- IMPACT ---------------- */
+
+    .impact {
+      background: var(--forest);
+      color: white;
+      padding: 120px 10%;
+      text-align: center;
+    }
+
+    .impact .eyebrow {
+      margin-bottom: 20px;
+    }
+
+    .impact-number {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(110px, 18vw, 220px);
+      line-height: .8;
+      color: var(--copper);
+      margin: 20px 0 35px;
+    }
+
+    .impact h2 {
+      font-size: 42px;
+      margin-bottom: 25px;
+    }
+
+    .impact p {
+      max-width: 700px;
+      margin: auto;
+      color: rgba(255,255,255,.75);
+      font-size: 17px;
+    }
+
+    .impact-note {
+      margin-top: 50px;
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.55);
+    }
+
+    /* ---------------- CLIENTS / CANDIDATES ---------------- */
+
+    .two-column {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .panel {
+      padding: 100px 10%;
+    }
+
+    .panel-green {
+      background: var(--forest);
+      color: white;
+    }
+
+    .panel-ivory {
+      background: var(--cream);
+      color: var(--charcoal);
+    }
+
+    .panel h2 {
+      font-size: 45px;
+      margin-bottom: 25px;
+    }
+
+    .panel p {
+      max-width: 480px;
+      margin-bottom: 30px;
+      opacity: .75;
+    }
+
+    .text-link {
+      color: var(--copper);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 12px;
+    }
+
+    /* ---------------- CTA ---------------- */
+
+    .cta {
+      padding: 120px 10%;
+      text-align: center;
+      background: white;
+    }
+
+    .cta h2 {
+      font-size: clamp(45px, 6vw, 75px);
+      color: var(--forest);
+      margin-bottom: 30px;
+    }
+
+    .cta p {
+      max-width: 600px;
+      margin: auto auto 40px;
+      color: #666;
+    }
+
+    /* ---------------- FOOTER ---------------- */
+
+    footer {
+      background: var(--forest-dark);
+      color: white;
+      padding: 70px 8% 30px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 50px;
+      margin-bottom: 70px;
+    }
+
+    footer h3 {
+      font-size: 25px;
+      margin-bottom: 20px;
+    }
+
+    footer h4 {
+      color: var(--copper);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 10px;
+      margin-bottom: 18px;
+    }
+
+    footer p,
+    footer a {
+      color: rgba(255,255,255,.6);
+      font-size: 13px;
+    }
+
+    footer a {
+      display: block;
+      margin-bottom: 9px;
+    }
+
+    footer a:hover {
+      color: var(--copper);
+    }
+
+    .footer-impact {
+      color: white;
+      max-width: 350px;
+    }
+
+    .footer-impact strong {
+      color: var(--copper);
+    }
+
+    .copyright {
+      border-top: 1px solid rgba(255,255,255,.12);
+      padding-top: 25px;
+      color: rgba(255,255,255,.4);
+      font-size: 11px;
+    }
+
+    /* ---------------- MOBILE ---------------- */
+
+    @media (max-width: 800px) {
+
+      nav {
+        padding: 0 5%;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        min-height: 650px;
+        padding: 80px 7%;
+      }
+
+      .hero h1 {
+        font-size: 58px;
+      }
+
+      .hero-subtitle {
+        font-size: 21px;
+      }
+
+      .expertise-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .approach-grid {
+        grid-template-columns: 1fr;
+        gap: 45px;
+      }
+
+      .two-column {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 500px) {
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .button {
+        margin-bottom: 10px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+
+  <nav>
+    <a href="#" class="logo">
+      GLENGROVE
+      <span>APPOINTMENTS</span>
+    </a>
+
+    <div class="nav-links">
+      <a href="#expertise">Expertise</a>
+      <a href="#approach">Approach</a>
+      <a href="#clients">For Clients</a>
+      <a href="#impact">Impact</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <a href="#contact" class="nav-button">Make an Appointment</a>
+    </div>
+  </nav>
+
+
+  <!-- HERO -->
+
+  <section class="hero">
+
+    <div class="hero-content">
+
+      <div class="eyebrow">
+        Insurance & Financial Services
+      </div>
+
+      <h1>
+        Exceptional people.<br>
+        <span>Important appointments.</span>
+      </h1>
+
+      <p class="hero-subtitle">
+        Specialist search for the London insurance and financial services market.
+      </p>
+
+      <p class="hero-text">
+        Glengrove identifies exceptional people for the positions where
+        the right appointment can change the trajectory of a business.
+      </p>
+
+      <a href="#contact" class="button button-primary">
+        Make an Appointment
+      </a>
+
+      <a href="#expertise" class="button button-secondary">
+        Explore Expertise
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- PHILOSOPHY -->
+
+  <section class="intro">
+
+    <div class="eyebrow" style="color:#B56F45;">
+      Our Philosophy
+    </div>
+
+    <h2>
+      The right person can change the trajectory of a business.
+    </h2>
+
+    <div class="copper-line"></div>
+
+    <p>
+      Every organisation is on a journey. The people it chooses to bring
+      with it can determine how far it goes. Glengrove exists to make
+      those important appointments possible.
+    </p>
+
+  </section>
+
+
+  <!-- EXPERTISE -->
+
+  <section class="expertise" id="expertise">
+
+    <div class="section-heading">
+
+      <div class="eyebrow" style="color:#B56F45;">
+        Our Expertise
+      </div>
+
+      <h2>Insurance is our market. People are our expertise.</h2>
+
+      <p>
+        We specialise in identifying exceptional professionals across
+        the insurance and financial services landscape.
+      </p>
+
+    </div>
+
+    <div class="expertise-grid">
+
+      <div class="expertise-card">
+        <div class="expertise-number">01</div>
+        <h3>Underwriting</h3>
+        <p>
+          Specialist and senior underwriting appointments across the
+          London Market and international insurance.
+        </p>
+      </div>
+
+      <div class="expertise-card">
+        <div class="expertise-number">02</div>
+        <h3>Broking</h3>
+        <p>
+          Specialist broking, client leadership and market-facing
+          appointments.
+        </p>
+      </div>
+
+      <div class="expertise-card">
+        <div class="expertise-number">03</div>
+        <h3>Claims</h3>
+        <p>
+          Technical claims professionals and claims leadership.
+        </p>
+      </div>
+
+      <div class="expertise-card">
+        <div class="expertise-number">04</div>
+        <h3>Risk & Compliance</h3>
+        <p>
+          Risk, compliance, governance and regulatory appointments.
+        </p>
+      </div>
+
+      <div class="expertise-card">
+        <div class="expertise-number">05</div>
+        <h3>Finance & Operations</h3>
+        <p>
+          The people who provide the infrastructure behind successful
+          insurance organisations.
+        </p>
+      </div>
+
+      <div class="expertise-card">
+        <div class="expertise-number">06</div>
+        <h3>Leadership</h3>
+        <p>
+          Senior management, executive and strategic appointments.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- APPROACH -->
+
+  <section class="approach" id="approach">
+
+    <div class="section-heading">
+
+      <div class="eyebrow" style="color:#B56F45;">
+        Our Approach
+      </div>
+
+      <h2>A search, not a database.</h2>
+
+      <p>
+        Important appointments require more than a list of available
+        candidates. They require understanding, research and judgement.
+      </p>
+
+    </div>
+
+    <div class="approach-grid">
+
+      <div class="step">
+        <div class="step-number">01</div>
+        <h3>Understand</h3>
+        <p>
+          We understand the organisation, its ambitions and what the
+          appointment needs to achieve.
+        </p>
+      </div>
+
+      <div class="step">
+        <div class="step-number">02</div>
+        <h3>Map</h3>
+        <p>
+          We research the relevant market and identify where the
+          strongest people are.
+        </p>
+      </div>
+
+      <div class="step">
+        <div class="step-number">03</div>
+        <h3>Identify</h3>
+        <p>
+          We approach relevant individuals discreetly and personally.
+        </p>
+      </div>
+
+      <div class="step">
+        <div class="step-number">04</div>
+        <h3>Assess</h3>
+        <p>
+          We look beyond the CV to understand capability, motivation
+          and fit.
+        </p>
+      </div>
+
+      <div class="step">
+        <div class="step-number">05</div>
+        <h3>Appoint</h3>
+        <p>
+          We guide both sides through to a successful appointment.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- IMPACT -->
+
+  <section class="impact" id="impact">
+
+    <div class="eyebrow">
+      Our Impact
+    </div>
+
+    <div class="impact-number">10%</div>
+
+    <h2>Our success should create something beyond ourselves.</h2>
+
+    <div class="copper-line"></div>
+
+    <p>
+      Glengrove commits 10% of its revenue to environmental and social
+      causes. As the business grows, so does the contribution we are
+      able to make.
+    </p>
+
+    <div class="impact-note">
+      Environmental · Social · Long-term impact
+    </div>
+
+  </section>
+
+
+  <!-- CLIENT / CANDIDATE -->
+
+  <section class="two-column" id="clients">
+
+    <div class="panel panel-green">
+
+      <div class="eyebrow">
+        For Clients
+      </div>
+
+      <h2>Have an important appointment to make?</h2>
+
+      <p>
+        The most important appointments rarely begin with a job
+        description. They begin with a business need.
+      </p>
+
+      <a href="#contact" class="text-link">
+        Discuss an Appointment →
+      </a>
+
+    </div>
+
+
+    <div class="panel panel-ivory">
+
+      <div class="eyebrow" style="color:#B56F45;">
+        For Candidates
+      </div>
+
+      <h2>Your next appointment matters too.</h2>
+
+      <p>
+        We work with people whose careers are moving somewhere —
+        whether or not they are actively looking.
+      </p>
+
+      <a href="#contact" class="text-link">
+        Start a Conversation →
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- ABOUT -->
+
+  <section class="intro" id="about">
+
+    <div class="eyebrow" style="color:#B56F45;">
+      About Glengrove
+    </div>
+
+    <h2>A different kind of search firm.</h2>
+
+    <div class="copper-line"></div>
+
+    <p>
+      Glengrove is built around a simple belief: when the right people
+      come together with purpose, organisations become stronger.
+      We bring specialist market knowledge, discretion and judgement
+      to the appointments that matter.
+    </p>
+
+  </section>
+
+
+  <!-- CONTACT -->
+
+  <section class="cta" id="contact">
+
+    <div class="eyebrow" style="color:#B56F45;">
+      Start a Conversation
+    </div>
+
+    <h2>Let's talk about the appointment.</h2>
+
+    <p>
+      Whether you are building a team, considering your next move,
+      or simply want to understand the market, we would be interested
+      in hearing from you.
+    </p>
+
+    <a href="mailto:hello@glengroveappointments.com"
+       class="button"
+       style="background:#173B32;color:white;">
+      Contact Glengrove
+    </a>
+
+  </section>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <div class="footer-grid">
+
+      <div>
+
+        <h3>GLENGROVE</h3>
+
+        <p class="footer-impact">
+          <strong>Appointments</strong><br><br>
+          Specialist search across insurance and financial services.
+        </p>
+
+        <br>
+
+        <p class="footer-impact">
+          <strong>10% of revenue</strong> committed to environmental
+          and social impact.
+        </p>
+
+      </div>
+
+
+      <div>
+
+        <h4>Explore</h4>
+
+        <a href="#expertise">Expertise</a>
+        <a href="#approach">Our Approach</a>
+        <a href="#impact">Our Impact</a>
+        <a href="#about">About</a>
+
+      </div>
+
+
+      <div>
+
+        <h4>For</h4>
+
+        <a href="#clients">Clients</a>
+        <a href="#contact">Candidates</a>
+        <a href="#contact">Contact</a>
+
+      </div>
+
+
+      <div>
+
+        <h4>Connect</h4>
+
+        <a href="#">LinkedIn</a>
+        <a href="mailto:hello@glengroveappointments.com">
+          Email
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <div class="copyright">
+
+      © 2026 Glengrove Appointments. All rights reserved.
+
+    </div>
+
+  </footer>
+
+</body>
+</html>
